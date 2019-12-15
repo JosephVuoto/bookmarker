@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xieyangzhe.bookmarker.dao.UserDao">
+    <resultMap id="userMap" type="User">
+        <id column="user_id" property="userId" jdbcType="INTEGER"/>
+        <result column="email" property="email" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="nickname" property="nickname" jdbcType="VARCHAR"/>
+        <result column="enabled" property="enabled" jdbcType="INTEGER"/>
+        <association property="role" javaType="Role">
+            <id column="role_id" property="roleId" jdbcType="INTEGER"/>
+            <result column="role_name" property="roleName" jdbcType="VARCHAR"/>
+        </association>
+    </resultMap>
+
+    <select id="selectAllUsers" resultMap="userMap">
+        select * from user inner join role on role.role_id = user.role order by user.user_id desc
+    </select>
+
+    <select id="selectUserByEmail" resultMap="userMap" parameterType="String">
+        select * from user inner join role on role.role_id = user.role
+        where user.email = #{email} limit 1
+    </select>
+
+    <insert id="insertUser" parameterType="User">
+        INSERT INTO user (user_id, email, password, nickname)
+        VALUES (NULL, #{email}, #{password}, #{nickname})
+    </insert>
+</mapper>
