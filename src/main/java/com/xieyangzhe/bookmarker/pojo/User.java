@@ -1,5 +1,7 @@
 package com.xieyangzhe.bookmarker.pojo;
 
+import com.google.gson.Gson;
+
 /**
  * table name:  user
  * author name: joseph
@@ -56,6 +58,11 @@ public class User {
 
     public boolean isEnabled() {
         return enabled;
+    }
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
     }
 }
 

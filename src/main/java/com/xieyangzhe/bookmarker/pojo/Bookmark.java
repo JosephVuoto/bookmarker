@@ -15,7 +15,7 @@ public class Bookmark {
     private String comment;
     private Date time;
     private int user;
-    private int location;
+    private Folder location;
 
     public int getBookmarkId() {
         return bookmarkId;
@@ -65,11 +65,11 @@ public class Bookmark {
         this.user = user;
     }
 
-    public int getLocation() {
+    public Folder getLocation() {
         return location;
     }
 
-    public void setLocation(int location) {
+    public void setLocation(Folder location) {
         this.location = location;
     }
 }

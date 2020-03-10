@@ -22,7 +22,7 @@
         where user.email = #{email} limit 1
     </select>
 
-    <insert id="insertUser" parameterType="User">
+    <insert id="insertUser" parameterType="User" useGeneratedKeys="true" keyProperty="userId" keyColumn="user_id">
         INSERT INTO user (user_id, email, password, nickname)
         VALUES (NULL, #{email}, #{password}, #{nickname})
     </insert>

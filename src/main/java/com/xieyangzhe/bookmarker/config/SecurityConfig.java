@@ -1,9 +1,9 @@
 package com.xieyangzhe.bookmarker.config;
 
 import com.xieyangzhe.bookmarker.JWTAuthenticationEntryPoint;
-import filter.ExceptionFilter;
-import filter.JWTAuthenticationFilter;
-import filter.JWTAuthorizationFilter;
+import com.xieyangzhe.bookmarker.filter.ExceptionFilter;
+import com.xieyangzhe.bookmarker.filter.JWTAuthenticationFilter;
+import com.xieyangzhe.bookmarker.filter.JWTAuthorizationFilter;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;

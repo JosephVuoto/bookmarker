@@ -1,5 +1,7 @@
 package com.xieyangzhe.bookmarker.pojo;
 
+import com.google.gson.Gson;
+
 /**
  * table name:  folder
  * author name: joseph
@@ -9,8 +11,8 @@ public class Folder {
 
     private int folderId;
     private String name;
-    private int parent;
     private int user;
+    private String path;
 
     public int getFolderId() {
         return folderId;
@@ -28,20 +30,25 @@ public class Folder {
         this.name = name;
     }
 
-    public int getParent() {
-        return parent;
-    }
-
-    public void setParent(int parent) {
-        this.parent = parent;
-    }
-
     public int getUser() {
         return user;
     }
 
     public void setUser(int user) {
         this.user = user;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
     }
 }
 

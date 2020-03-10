@@ -1,4 +1,4 @@
-package filter;
+package com.xieyangzhe.bookmarker.filter;
 
 import com.xieyangzhe.bookmarker.common.JwtTokenUtils;
 import org.springframework.security.authentication.AuthenticationManager;

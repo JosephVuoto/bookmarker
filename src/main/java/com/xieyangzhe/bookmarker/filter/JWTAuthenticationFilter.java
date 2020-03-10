@@ -1,4 +1,4 @@
-package filter;
+package com.xieyangzhe.bookmarker.filter;
 
 import com.google.gson.Gson;
 import com.xieyangzhe.bookmarker.common.JwtTokenUtils;
